@@ -24,4 +24,4 @@ function greeting(person: Person) {
 greeting({ name: "a" });
 greeting({ name: "b" });
 
-// typ정보를 명시적으로 저장하는 방법
+// type정보를 명시적으로 저장하는 방법

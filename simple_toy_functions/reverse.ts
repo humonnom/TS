@@ -1,18 +1,13 @@
-function myReverse<T>(input: T[]): T[] {
-  let output = [];
-  for (let i = input.length - 1; i >= 0; i--) {
-    output.push(input[i]);
-  }
-  return output;
-}
+const myReverse = (list: number[]): number[] => {
+  return list.reduce((prev: number[], curr: number) => {
+    console.log(prev, curr);
+    return [curr, ...prev];
+  }, []);
+};
 
 let sample = [1, 2, 3];
 let reversed = myReverse(sample);
-console.log(reversed); // 3,2,1
+console.log(reversed);
 
-// Safety!
-// reversed[0] = "1"; // Error!
-// reversed = ["1", "2"]; // Error!
-
-reversed[0] = 1; // Okay
-reversed = [1, 2]; // Okay
+reversed[0] = 1;
+reversed = [1, 2];
