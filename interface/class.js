@@ -1,25 +1,23 @@
 var PersonA = /** @class */ (function () {
-    function PersonA() {
+    function PersonA(name) {
+        this.name = name;
     }
     return PersonA;
 }());
 var PersonB = /** @class */ (function () {
-    function PersonB() {
+    function PersonB(name) {
+        this.name = name;
     }
     return PersonB;
 }());
 function greeting(person) {
-    switch (person.name) {
-        case "a": {
-            console.log("my name is a");
-            break;
-        }
-        case "b": {
-            console.log("my name is b");
-            break;
-        }
+    if (person instanceof PersonA) {
+        console.log("my name is a");
+    }
+    else if (person instanceof PersonB) {
+        console.log("my name is b");
     }
 }
-greeting({ name: "a" });
-greeting({ name: "b" });
-// typ정보를 명시적으로 저장하는 방법
+greeting(new PersonA("a"));
+greeting(new PersonB("b"));
+// type 정보를 명시적으로 저장하는 방법
